@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--不同的mapper文件的namespace是不一样的-->
+<mapper namespace="com.mapper.UserMapper">
+    <!--亟待解决的问题：结果集（表）中的列名和对象中的属性名称不匹配-->
+    <!--解决方案：使用resultMap元素-->
+    <!--resultMap元素：结果集合对象的映射-->
+            <!--id属性：当前Mapper文件中的resultMap的唯一名称-->
+            <!--type属性：把结果集中的每一行数据封装成什么类型的对象-->
+            <!--子元素：-->
+                <!--id元素：功能和result元素一样，如果是主键官方建议使用id元素，提升性能-->
+                <!--result元素：匹配对象中的哪一个属性对应表中的哪一个列-->
+    <resultMap id="BaseResultMap" type="User">
+        <id column="u_id" property="id"/>
+        <result column="u_name" property="name"/>
+        <result column="u_salary" property="salary"/>
+    </resultMap>
+
+    <select id="get"  resultMap="BaseResultMap">
+        SELECT u_id ,u_name ,u_salary  FROM t_user WHERE u_id = #{id}
+    </select>
+    <select id="listAll" resultMap="BaseResultMap">
+        SELECT u_id ,u_name ,u_salary  FROM t_user
+    </select>
+    <update id="update" >
+        UPDATE t_user SET name=#{name},salary=#{salary} WHERE id=#{aid}
+    </update>
+    <delete id="delete">
+        DELETE FROM t_user where id=#{id}
+    </delete>
+    <insert id="save"  keyProperty="id" useGeneratedKeys="true" >
+        INSERT INTO t_user(name,salary) VALUES(#{name},#{salary})
+    </insert>
+
+    <!--&lt;!&ndash;查询结果总数&ndash;&gt;-->
+    <!--<select id="queryForCount" resultType="_int">-->
+        <!--SELECT COUNT(id) FROM t_user-->
+    <!--</select>-->
+
+    <!--&lt;!&ndash;查询部分列&ndash;&gt;-->
+    <!--<select id="queryForMap" resultType="map">-->
+          <!--SELECT id,name FROM t_user-->
+    <!--</select>-->
+</mapper>

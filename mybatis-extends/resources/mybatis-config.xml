@@ -3,10 +3,19 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!--属性配置-->
+    <properties resource="db.properties"/>
     <!--日志技术-->
     <settings>
         <setting name="logImpl" value="LOG4J"/>
     </settings>
+
+    <!--类型别名-->
+    <typeAliases>
+        <!--<typeAlias type="com.domain.User" alias="User"/>-->
+        <package name="com.domain"/>
+    </typeAliases>
+
     <!--1.配置数据库的环境-->
     <environments default="dev">
         <!--开发环境-->
@@ -15,15 +24,15 @@
             <!--②连接池-->
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/mybatisdemo?serverTimezone=GMT%2B8"/>
-                <property name="username" value="root"/>
-                <property name="password" value="123456"/>
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
     <!--关联映射文件-->
     <mappers>
-        <mapper resource="com/domain/UserMapper.xml"/>
+        <mapper resource="com/mapper/UserMapper.xml"/>
     </mappers>
 </configuration>

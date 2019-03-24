@@ -4,6 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyBatis.iml" filepath="$PROJECT_DIR$/MyBatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyBatis_CRUD/MyBatis_CRUD.iml" filepath="$PROJECT_DIR$/MyBatis_CRUD/MyBatis_CRUD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-extends/mybatis-extends.iml" filepath="$PROJECT_DIR$/mybatis-extends/mybatis-extends.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_annotation/mybatis_annotation.iml" filepath="$PROJECT_DIR$/mybatis_annotation/mybatis_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_dynamic/mybatis_dynamic.iml" filepath="$PROJECT_DIR$/mybatis_dynamic/mybatis_dynamic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_params/mybatis_params.iml" filepath="$PROJECT_DIR$/mybatis_params/mybatis_params.iml" />
     </modules>
   </component>
 </project>

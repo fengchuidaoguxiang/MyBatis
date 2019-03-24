@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.UserMapper">
+    <!--<resultMap id="userResultMap" type="User">-->
+        <!--<id property="id" column="u_id"/>-->
+        <!--<result property="name" column="u_name"/>-->
+        <!--<result property="salary" column="u_salary"/>-->
+    <!--</resultMap>-->
+    <!--<select id="get" resultMap="userResultMap">-->
+       <!--SELECT u_id,u_name,u_salary FROM t_user-->
+    <!--</select>-->
+
+    <!--<insert id="save" keyProperty="id" useGeneratedKeys="true">-->
+        <!--insert into t_user(u_name,u_salary) values(#{name},#{salary})-->
+    <!--</insert>-->
+</mapper>
