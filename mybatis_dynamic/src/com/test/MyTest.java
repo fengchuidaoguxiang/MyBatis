@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import javax.sound.midi.Soundbank;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.List;
 
 public class MyTest {
@@ -85,7 +86,19 @@ public class MyTest {
     public void test7(){
         SqlSession session = MyBatisUtils.getSession();
         EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
-        mapper.batchDelete(new Long[]{1L,2L,3L});
+        mapper.batchDelete(Arrays.asList(1L,2L,3L));
+        session.commit();
+        session.close();
+    }
+
+    @Test
+    public void test8(){
+        SqlSession session = MyBatisUtils.getSession();
+        EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
+        Employee e1 = new Employee(1L,"赵一","001",new BigDecimal("800.00"),10L);
+        Employee e2 = new Employee(2L,"赵二","002",new BigDecimal("900.00"),20L);
+        Employee e3 = new Employee(3L,"赵三","003",new BigDecimal("1000.00"),25L);
+        mapper.batchSave(Arrays.asList(e1,e2,e3));
         session.commit();
         session.close();
     }

@@ -71,4 +71,11 @@
             #{id}
         </foreach>
     </delete>
+
+    <insert id="batchSave">
+        insert into employee(id,name,sn,salary,deptId) values
+        <foreach collection="ems" separator="," item="employee">
+            (#{employee.id},#{employee.name},#{employee.sn},#{employee.salary},#{employee.deptId})
+        </foreach>
+    </insert>
 </mapper>

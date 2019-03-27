@@ -17,5 +17,7 @@ public interface EmployeeMapper {
     public List<Employee> query4(@Param("minSalary") BigDecimal minSalary,
                           @Param("maxSalary") BigDecimal maxSalary,@Param("deptId") Long deptId);
 
-    public void batchDelete(@Param("ids") Long[] ids);
+    public void batchDelete(@Param("ids") List<Long> ids);
+
+    public void batchSave(@Param("ems") List<Employee> ems);
 }
