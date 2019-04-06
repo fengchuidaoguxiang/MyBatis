@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--<classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" />-->
+    <context id="mysql" targetRuntime="MyBatis3">
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!--beginningDelimiter和endingDelimiter:指明数据库的用于标记数据库对象名的符号，比如oracle是双引号，mysql是反引号-->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!--注释生成器-->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/mybatisdemo?serverTimezone=GMT%2B8"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <!--<javaTypeResolver >-->
+            <!--<property name="forceBigDecimals" value="false" />-->
+        <!--</javaTypeResolver>-->
+
+        <!--生成domain对象-->
+        <!--<javaModelGenerator targetPackage="com.domain" targetProject="src/main/java">-->
+        <javaModelGenerator targetPackage="com.domain" targetProject="src">
+            <property name="enableSubPackages" value="true" />
+        </javaModelGenerator>
+
+        <!--生成Mapper文件-->
+        <!--<sqlMapGenerator targetPackage="com.mapper"  targetProject="src/main/resources">-->
+        <sqlMapGenerator targetPackage="com.mapper"  targetProject="resources">
+        <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!--生成Mapper接口-->
+        <!--<javaClientGenerator type="com.mapper" targetPackage="test.dao"  targetProject="src/main/java">-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.mapper"  targetProject="src">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!--对应表名-->
+        <table tableName="systemuser2" delimitIdentifiers="true" domainObjectName="SystemUser2">
+            <!--是否原样输出列名-->
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+    </context>
+</generatorConfiguration>

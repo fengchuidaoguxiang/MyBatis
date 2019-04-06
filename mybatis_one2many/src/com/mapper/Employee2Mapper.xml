@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.Employee2Mapper">
+    <resultMap id="baseResultMap" type="Employee2">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="deptId" column="dept_id"/>
+    </resultMap>
+    <select id="get" resultMap="baseResultMap">
+        SELECT id,name,dept_id FROM employee2 WHERE dept_id=#{deptId}
+    </select>
+    <!--<select id="get" resultType="Employee2">-->
+        <!--SELECT id,name,dept_id as deptId FROM employee2 WHERE dept_id=#{deptId}-->
+    <!--</select>-->
+</mapper>

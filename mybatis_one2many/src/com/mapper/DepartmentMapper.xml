@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.DepartmentMapper">
+    <resultMap id="baseResultMap" type="Department">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <collection property="employee2s" ofType="Employee2">
+            <id property="id" column="e_id"/>
+            <result property="name" column="e_name"/>
+            <result property="deptId" column="id"/>
+        </collection>
+    </resultMap>
+    <select id="get" resultMap="baseResultMap">
+        SELECT t.id,t.name,e.id AS e_id,e.name AS e_name
+        FROM department t JOIN employee2 e
+        ON t.id = e.dept_id
+        WHERE t.id = #{id}
+    </select>
+</mapper>

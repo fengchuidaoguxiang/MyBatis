@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.TeacherMapper">
+    <insert id="save" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO teacher(name) VALUES(#{name})
+    </insert>
+    <select id="selectByStudentId" resultType="com.domain.Teacher">
+        SELECT r.id,r.name
+        FROM teacher r JOIN student_teacher  st ON r.id = st.teacher_id
+        WHERE student_id=#{studentId}
+    </select>
+</mapper>

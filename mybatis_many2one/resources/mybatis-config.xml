@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties"/>
+    <!--全局的配置-->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <!--延迟加载开启-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!--不要积极的查询关联对象-->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!--延迟加载触发的方法-->
+        <setting name="lazyLoadTriggerMethods" value="clone"/>
+    </settings>
+    <typeAliases>
+        <package name="com.domain"/>
+    </typeAliases>
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${db.driver}"/>
+                <property name="url" value="${db.url}"/>
+                <property name="username" value="${db.username}"/>
+                <property name="password" value="${db.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com/mapper/Employee2Mapper.Bak.xml"/>
+        <mapper resource="com/mapper/DepartmentMapper.xml"/>
+    </mappers>
+</configuration>

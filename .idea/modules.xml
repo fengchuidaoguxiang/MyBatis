@@ -4,11 +4,19 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyBatis.iml" filepath="$PROJECT_DIR$/MyBatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyBatis_CRUD/MyBatis_CRUD.iml" filepath="$PROJECT_DIR$/MyBatis_CRUD/MyBatis_CRUD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-MBG/mybatis-MBG.iml" filepath="$PROJECT_DIR$/mybatis-MBG/mybatis-MBG.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-extends/mybatis-extends.iml" filepath="$PROJECT_DIR$/mybatis-extends/mybatis-extends.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_QBC/mybatis_QBC.iml" filepath="$PROJECT_DIR$/mybatis_QBC/mybatis_QBC.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis_advance/mybatis_advance.iml" filepath="$PROJECT_DIR$/mybatis_advance/mybatis_advance.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis_annotation/mybatis_annotation.iml" filepath="$PROJECT_DIR$/mybatis_annotation/mybatis_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_cache/mybatis_cache.iml" filepath="$PROJECT_DIR$/mybatis_cache/mybatis_cache.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis_dynamic/mybatis_dynamic.iml" filepath="$PROJECT_DIR$/mybatis_dynamic/mybatis_dynamic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_many2many/mybatis_many2many.iml" filepath="$PROJECT_DIR$/mybatis_many2many/mybatis_many2many.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_many2one/mybatis_many2one.iml" filepath="$PROJECT_DIR$/mybatis_many2one/mybatis_many2one.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_one2many/mybatis_one2many.iml" filepath="$PROJECT_DIR$/mybatis_one2many/mybatis_one2many.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_pageHelper/mybatis_pageHelper.iml" filepath="$PROJECT_DIR$/mybatis_pageHelper/mybatis_pageHelper.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis_params/mybatis_params.iml" filepath="$PROJECT_DIR$/mybatis_params/mybatis_params.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_plugin/mybatis_plugin.iml" filepath="$PROJECT_DIR$/mybatis_plugin/mybatis_plugin.iml" />
     </modules>
   </component>
 </project>
